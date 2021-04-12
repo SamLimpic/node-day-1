@@ -45,7 +45,7 @@ export class BurgersController extends BaseController {
     async delete(req, res, next) {
         try {
             let data = await burgersService.delete(req.params.id)
-            res.send("<h1>Eaten!</h1>")
+            res.send(data)
         } catch (error) {
             next(error)
         }

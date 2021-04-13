@@ -11,13 +11,15 @@ class FakeDb {
     cats = [{
         "name": "Smudgins",
         "age": 4,
-        "size": "smol"
+        "size": "smol",
+        "id": generateId()
     }]
 
     dogs = [{
         "name": "Spicy Jovaliah",
         "age": 8,
-        "size": "medium"
+        "size": "medium",
+        "id": generateId()
     }]
 }
 

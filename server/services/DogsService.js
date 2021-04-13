@@ -3,27 +3,27 @@ import { fakeDb } from "../db/FakeDB";
 import { BadRequest } from "../utils/Errors";
 import { generateId } from "../utils/GenerateId";
 
-class BurgersService {
+class DogsService {
     delete(id) {
-        let value = fakeDb.burgers.find(e => e.id === id)
+        let value = fakeDb.dogs.find(e => e.id === id)
         if (!value) {
             throw new BadRequest("Invalid Id Casting Failed");
         }
-        fakeDb.burgers = fakeDb.burgers.filter(s => s.id !== id)
+        fakeDb.dogs = fakeDb.dogs.filter(s => s.id !== id)
     }
-    create(newBurger) {
-        newBurger.id = generateId()
+    create(newDog) {
+        newDog.id = generateId()
         // other buisness logic
 
-        fakeDb.burgers.push(newBurger)
-        return newBurger
+        fakeDb.dogs.push(newDog)
+        return newDog
     }
     async find(query = {}) {
         // let values = await dbContext.Values.find(query);
-        return fakeDb.burgers;
+        return fakeDb.dogs;
     }
     async findById(id) {
-        let value = fakeDb.burgers.find(e => e.id === id)
+        let value = fakeDb.dogs.find(e => e.id === id)
         if (!value) {
             throw new BadRequest("Invalid Id Casting Failed");
         }
@@ -31,4 +31,4 @@ class BurgersService {
     }
 }
 
-export const burgersService = new BurgersService();
+export const dogsService = new DogsService();
